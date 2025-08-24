@@ -5,20 +5,25 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'FinWallet - Next Generation Banking Wallet',
-  description: 'Experience the future of banking with our secure, fast, and user-friendly digital wallet. Send money, invest, and manage your finances with ease.',
-  keywords: 'fintech, banking, wallet, digital payments, investment, cryptocurrency',
-  authors: [{ name: 'FinWallet Team' }],
+  title: 'MAG®ID - The WhatsApp of Payments',
+  description: 'Experience the future of payments with our secure, fast, and user-friendly digital payment platform. Send money, make payments, and manage your finances with ease.',
+  keywords: 'fintech, payments, digital payments, money transfer, payment platform, cryptocurrency',
+  authors: [{ name: 'MAG®ID Team' }],
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
-    title: 'FinWallet - Next Generation Banking Wallet',
-    description: 'Experience the future of banking with our secure, fast, and user-friendly digital wallet.',
+    title: 'MAG®ID - The WhatsApp of Payments',
+    description: 'Experience the future of payments with our secure, fast, and user-friendly digital payment platform.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FinWallet - Next Generation Banking Wallet',
-    description: 'Experience the future of banking with our secure, fast, and user-friendly digital wallet.',
+    title: 'MAG®ID - The WhatsApp of Payments',
+    description: 'Experience the future of payments with our secure, fast, and user-friendly digital payment platform.',
   },
 }
 
