@@ -31,34 +31,27 @@ export default function Home() {
       {/* Spacer for fixed header */}
       <div className="h-32"></div>
 
-      {/* Hero Section with Background Image */}
-      <div className="relative h-96">
-        {/* Background Image - man-ad.jpg */}
-        <div className="absolute inset-0">
-          <Image 
-            src="/man-ad.jpg" 
-            alt="Background" 
-            fill
-            className="object-cover object-center object-bottom"
-            priority
-          />
-        </div>
+      {/* Hero Section */}
+      <div className="relative w-full h-screen">
+        <Image 
+          src="/new-ad.png" 
+          alt="Hero" 
+          fill
+          className="object-cover object-center object-bottom"
+          priority
+        />
         
-        {/* Overlay Text */}
-        <div className="relative z-10 h-full flex flex-col justify-center p-6">
+        {/* Hero Text */}
+        <div className="absolute inset-0 flex items-center justify-start px-8">
           <div className="text-white">
-            <h1 className="text-6xl font-bold mb-4 opacity-90 font-['Arial'] leading-tight">
-              Get paid, easy.
-            </h1>
-            <p className="text-2xl opacity-80 font-['Arial']">
-              https://mymag-id.com/marc
-            </p>
+            <h1 className="text-6xl font-['Arial'] mb-4">Get paid, easy.</h1>
+            <p className="text-2xl font-['Arial']">https://mymag-id.com/marc</p>
           </div>
         </div>
         
         {/* Powered by stripe.com at bottom */}
         <div className="absolute bottom-4 right-6 z-10">
-          <p className="text-white text-base font-semibold opacity-100">
+          <p className="text-white text-base font-normal opacity-100">
             Powered by stripe.com
           </p>
         </div>
@@ -71,14 +64,14 @@ export default function Home() {
         
         <div className="space-y-3 text-lg leading-relaxed">
           <p>MAG® ID It's like WhatsApp, but for money.</p>
-          <p>You get a personal money link like <span className="font-bold">https://mymag-id.com/jasmine</span>, your Wallet.</p>
+          <p>You get a personal PayMe link like <span className="font-bold">https://mymag-id.com/jasmine</span>.</p>
           <p>Anyone can <span className="font-bold">just tap it & scan your QR Code</span> to pay you instantly.</p>
           <p>No bank account numbers, no waiting, no fees.</p>
           
           <div className="mt-6 space-y-2">
             <p className="text-lg leading-tight">You see your balance right in the app, can split bills with friends, or get paid for anything.</p>
             <p className="text-lg leading-tight">Like helping with homework, reselling sneakers, or your side hustle.</p>
-            <p className="text-lg leading-tight">And if you want, you can also buy bitcoin and even get a free Visa card that works in stores and Apple Pay.</p>
+            <p className="text-lg leading-tight">You can also buy & hold bitcoin, and even get a free Visa card that works in stores and Apple Pay.</p>
           </div>
         </div>
       </div>
