@@ -164,7 +164,7 @@ export default function Home() {
           {/* Logo */}
           <div className="flex-1 flex justify-center">
             <Image 
-              src="/newlogo.png" 
+              src="/icon.png" 
               alt="MAG ID Logo" 
               width={120} 
               height={48} 
@@ -184,7 +184,7 @@ export default function Home() {
       <div className="h-16 md:h-20"></div>
 
       {/* Hero Section */}
-      <div className="relative w-full h-screen">
+      <div className="relative w-full h-screen -mt-16 md:-mt-20">
         <Image 
           src="/new-new.jpg" 
           alt="Hero" 
@@ -193,8 +193,20 @@ export default function Home() {
           priority
         />
         
+        {/* Logo in top left */}
+        <div className="absolute top-16 md:top-20 left-4 md:left-6 z-20">
+          <Image 
+            src="/logo-logo.png" 
+            alt="MAG ID Logo" 
+            width={600} 
+            height={240} 
+            className="w-64 md:w-96 h-auto"
+            priority
+          />
+        </div>
+        
         {/* Hero Text */}
-        <div className="absolute inset-0 flex items-center justify-start px-4 md:px-8">
+        <div className="absolute inset-0 flex items-center justify-start px-4 md:px-8 pt-16 md:pt-20">
           <div className="text-white">
             <h1 className="text-3xl md:text-6xl font-['Arial'] mb-2 md:mb-4">{t.heroTitle}</h1>
             <p className="text-lg md:text-2xl font-['Arial']">{t.heroUrl}</p>
