@@ -8,6 +8,9 @@ type Language = 'en' | 'it' | 'es' | 'de'
 export default function Home() {
   const [language, setLanguage] = useState<Language>('en')
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false)
+  const [showContactsModal, setShowContactsModal] = useState(false)
 
   const translations = {
     en: {
@@ -345,9 +348,24 @@ export default function Home() {
         
         {/* Footer Links */}
         <div className="flex justify-center items-center space-x-6 mt-8">
-          <a href="#" className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200">{t.terms}</a>
-          <a href="#" className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200">{t.privacy}</a>
-          <a href="#" className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200">{t.contacts}</a>
+          <button 
+            onClick={() => setShowTermsModal(true)}
+            className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200"
+          >
+            {t.terms}
+          </button>
+          <button 
+            onClick={() => setShowPrivacyModal(true)}
+            className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200"
+          >
+            {t.privacy}
+          </button>
+          <button 
+            onClick={() => setShowContactsModal(true)}
+            className="text-sm font-medium hover:underline cursor-pointer transition-colors duration-200"
+          >
+            {t.contacts}
+          </button>
         </div>
         
         {/* Legal Disclaimer */}
@@ -362,6 +380,179 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Privacy Modal */}
+      {showPrivacyModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Privacy Policy</h2>
+                <button
+                  onClick={() => setShowPrivacyModal(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="text-gray-700 space-y-4 text-sm leading-relaxed">
+                <p>
+                  We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+                </p>
+                
+                <p>
+                  By using our service, you agree to the collection and use of information in accordance with this policy.
+                </p>
+                
+                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                  <p className="font-semibold mb-2">Founder & CEO of Mediaair Brands Limited CRN. 13799465</p>
+                  <p><strong>Email:</strong> luisjavierperalta@aol.com</p>
+                  <p><strong>Phone:</strong> +39 351 9911 296</p>
+                  <p><strong>Registered office address:</strong> Office 11450 182-184 High Street North, East Ham, London, E6 2JA</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => setShowPrivacyModal(false)}
+                  className="bg-[#2ad516ff] hover:bg-[#25c014] text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Terms Modal */}
+      {showTermsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Terms of Service</h2>
+                <button
+                  onClick={() => setShowTermsModal(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="text-gray-700 space-y-4 text-sm leading-relaxed">
+                <p>
+                  By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Use License:</h3>
+                <p>
+                  Permission is granted to temporarily download one copy of the materials (information or software) on Mediaair Brands Limited's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                </p>
+                <ul className="list-disc list-inside ml-4 space-y-1">
+                  <li>Modify or copy the materials;</li>
+                  <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                  <li>Attempt to decompile or reverse engineer any software contained on Mediaair Brands Limited's website;</li>
+                  <li>Remove any copyright or other proprietary notations from the materials; or</li>
+                  <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+                </ul>
+                <p>
+                  This license shall automatically terminate if you violate any of these restrictions and may be terminated by Mediaair Brands Limited at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Disclaimer:</h3>
+                <p>
+                  The materials on Mediaair Brands Limited's website are provided on an 'as is' basis. Mediaair Brands Limited makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                </p>
+                <p>
+                  Further, Mediaair Brands Limited does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Limitations:</h3>
+                <p>
+                  In no event shall Mediaair Brands Limited or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Mediaair Brands Limited's website, even if Mediaair Brands Limited or a Mediaair Brands Limited authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Accuracy of materials:</h3>
+                <p>
+                  The materials appearing on Mediaair Brands Limited's website could include technical, typographical, or photographic errors. Mediaair Brands Limited does not warrant that any of the materials on its website are accurate, complete or current. Mediaair Brands Limited may make changes to the materials contained on its website at any time without notice. However Mediaair Brands Limited does not make any commitment to update the materials.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Links:</h3>
+                <p>
+                  Mediaair Brands Limited has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Mediaair Brands Limited of the site. Use of any such linked website is at the user's own risk.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Modifications:</h3>
+                <p>
+                  Mediaair Brands Limited may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
+                </p>
+                
+                <h3 className="font-semibold text-base mt-6 mb-2">Governing Law:</h3>
+                <p>
+                  These terms and conditions are governed by and construed in accordance with the laws and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
+                </p>
+                
+                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                  <p className="font-semibold mb-2">Founder & CEO of Mediaair Brands Limited CRN. 13799465</p>
+                  <p><strong>Registered office address:</strong> Office 11450 182-184 High Street North, East Ham, London, E6 2JA</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => setShowTermsModal(false)}
+                  className="bg-[#2ad516ff] hover:bg-[#25c014] text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Contacts Modal */}
+      {showContactsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
+                <button
+                  onClick={() => setShowContactsModal(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="text-gray-700 space-y-4 text-sm leading-relaxed">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <p className="font-semibold mb-2">Founder & CEO of Mediaair Brands Limited</p>
+                  <p className="font-semibold text-base mb-4">Luis Javier Peralta</p>
+                  
+                  <div className="space-y-2">
+                    <p><strong>Support Email:</strong> support@mymag-id.com</p>
+                    <p><strong>Email:</strong> luisjavierperalta@aol.com</p>
+                    <p><strong>Phone:</strong> +39 351 9911 296</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => setShowContactsModal(false)}
+                  className="bg-[#2ad516ff] hover:bg-[#25c014] text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 } 
